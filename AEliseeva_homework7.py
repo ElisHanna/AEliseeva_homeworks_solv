@@ -55,9 +55,9 @@ if hour > 23 or\
 else:
     if hour == 0:
         print(f'12:{minute} a.m.')
-    elif hour > 0 and hour < 10:
+    elif  0 < hour < 10:
         print(f'{hour}:{minute} a.m')
-    elif hour >= 10 and hour < 12:
+    elif  10 <= hour < 12:
         print(f'{time} a.m.')
     elif hour > 12:
         print(f'{hour - 12}:{minute} p.m.')
