@@ -44,20 +44,22 @@ else:
 
 time = input("What's the time?")
 analysis = time.split(':')
+hour = int(analysis[0])
+minute = int(analysis[1])
 
-if int(analysis[0]) > 23 or\
-   int(analysis[0]) < 0 or\
-   int(analysis[1]) > 59 or\
-   int(analysis[1]) < 0:
+if hour > 23 or\
+   hour < 0 or\
+   minute > 59 or\
+   minute < 0:
     print("It's time to fix your watch!")
 else:
-    if int(analysis[0]) == 0:
-        print(f'12:{analysis[1]} a.m.')
-    elif int(analysis[0]) > 0 and int(analysis[0]) < 10:
-        print(f'{int(analysis[0])}:{analysis[1]} a.m')
-    elif int(analysis[0]) >= 10 and int(analysis[0]) < 12:
+    if hour == 0:
+        print(f'12:{minute} a.m.')
+    elif hour > 0 and hour < 10:
+        print(f'{hour}:{minute} a.m')
+    elif hour >= 10 and hour < 12:
         print(f'{time} a.m.')
-    elif int(analysis[0]) > 12:
-        print(f'{int(analysis[0]) - 12}:{analysis[1]} p.m.')
+    elif hour > 12:
+        print(f'{hour - 12}:{minute} p.m.')
     else:
         print(f'{time} p.m.')
