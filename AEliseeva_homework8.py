@@ -71,11 +71,11 @@ while bulls < 4:
     my_guess = input('Guess the number(4 different chars): ')
     my_num = [int(chars) for chars in my_guess]
 
-    for i in range(len(secret)):
+    for k in range(len(secret)):
         for j in range(len(my_num)):
-            if secret[i] == my_num[j] and i == j:
+            if secret[k] == my_num[j] and k == j:
                 bulls += 1
-            elif secret[i] == my_num[j] and i != j:
+            elif secret[k] == my_num[j] and i != j:
                 cows += 1
     if bulls == 4:
         print('You won!')
