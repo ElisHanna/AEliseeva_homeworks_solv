@@ -30,8 +30,8 @@ pyramide(10)
 
 # Statues
 
-highs = input('What high statues have you got? Enter separated by commas: ')
-highs = highs.split(',')
+stat_highs = input('What high statues have you got? Enter separated by commas: ')
+highs = stat_highs.split(',')
 stat_sizes = []
 for values in highs:
     stat_sizes.append(int(values))
