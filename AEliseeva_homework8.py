@@ -18,9 +18,11 @@ def pyramide(n):
 
     n = int(n)
     x = 1
-    for i in range(n):
+    i = 0
+    while i < n:
         print(str.center('*'*x, n*2))
         x += 2
+        i += 1
 
 pyramide(10)
 
