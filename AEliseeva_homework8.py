@@ -46,6 +46,7 @@ print(count)
 
 # Through the function
 
+
 def statues(sizes):  # list of integers expected
 
     sizes.sort()
