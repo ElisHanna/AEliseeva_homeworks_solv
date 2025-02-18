@@ -33,7 +33,7 @@ for values in highs:
 
 stat_sizes.sort()
 count = 0
-for i in range(len(sizes)):
+for i in range(len(stat_sizes)):
     if stat_sizes[i] - stat_sizes[i-1] > 1:
         count += stat_sizes[i] - stat_sizes[i-1] - 1
 
