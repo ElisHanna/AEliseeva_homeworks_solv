@@ -14,6 +14,8 @@ for j in range(rows):
 # Through the function
 
 def pyramide(n):
+
+
     n = int(n)
     x = 1
     for i in range(n):
@@ -41,7 +43,9 @@ print(count)
 
 # Through the function
 
-def statues(sizes):  #list of integers expected
+def statues(sizes):  # list of integers expected
+
+
     sizes.sort()
     d = 0
     for i in range(len(sizes)):
