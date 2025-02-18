@@ -38,7 +38,8 @@ for values in highs:
 
 stat_sizes.sort()
 count = 0
-for j in range(len(stat_sizes)):
+row_lenght = len(stat_sizes)
+for j in range(row_lenght):
     if stat_sizes[j] - stat_sizes[j-1] > 1:
         count += stat_sizes[j] - stat_sizes[j-1] - 1
 
@@ -51,7 +52,8 @@ def statues(sizes):  # list of integers expected
 
     sizes.sort()
     d = 0
-    for i in range(len(sizes)):
+    sizes_lenght = len(sizes)
+    for i in range(sizes_lenght):
         if sizes[i] - sizes[i-1] > 1:
             d += sizes[i] - sizes[i-1] - 1
 
