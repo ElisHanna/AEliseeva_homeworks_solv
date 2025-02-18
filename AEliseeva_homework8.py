@@ -76,9 +76,11 @@ while bulls < 4:
     bulls = 0
     my_guess = input('Guess the number(4 different chars): ')
     my_num = [int(chars) for chars in my_guess]
+    num_lenght = len(my_num)
+    secret_lenght = len(secret)
 
-    for k in range(len(secret)):
-        for j in range(len(my_num)):
+    for k in range(secret_lenght):
+        for j in range(num_lenght):
             if secret[k] == my_num[j] and k == j:
                 bulls += 1
             elif secret[k] == my_num[j] and k != j:
