@@ -75,7 +75,7 @@ while bulls < 4:
         for j in range(len(my_num)):
             if secret[k] == my_num[j] and k == j:
                 bulls += 1
-            elif secret[k] == my_num[j] and i != j:
+            elif secret[k] == my_num[j] and k != j:
                 cows += 1
     if bulls == 4:
         print('You won!')
