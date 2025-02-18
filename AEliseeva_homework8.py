@@ -13,8 +13,8 @@ for j in range(rows):
 
 # Through the function
 
-def pyramide(n):
 
+def pyramide(n):
 
     n = int(n)
     x = 1
@@ -23,6 +23,7 @@ def pyramide(n):
         print(str.center('*'*x, n*2))
         x += 2
         i += 1
+
 
 pyramide(10)
 
@@ -47,7 +48,6 @@ print(count)
 
 def statues(sizes):  # list of integers expected
 
-
     sizes.sort()
     d = 0
     for i in range(len(sizes)):
@@ -55,6 +55,7 @@ def statues(sizes):  # list of integers expected
             d += sizes[i] - sizes[i-1] - 1
 
     print(d)
+
 
 statues([6, 2, 3, 8])
 
