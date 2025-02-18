@@ -5,11 +5,11 @@ os.system('cls')
 
 # Pyramide
 
-n = int(input('How much rows do you wish? '))
-x = 1
-for i in range(n):
-    print(str.center('*'*x, n*2))
-    x += 2
+rows = int(input('How much rows do you wish? '))
+fact = 1
+for j in range(rows):
+    print(str.center('*'*fact, rows*2))
+    fact += 2
 
 # Through the function
 
@@ -27,17 +27,17 @@ pyramide(10)
 
 highs = input('What high statues have you got? Enter separated by commas: ')
 highs = highs.split(',')
-sizes = []
+stat_sizes = []
 for values in highs:
-    sizes.append(int(values))
+    stat_sizes.append(int(values))
 
-sizes.sort()
-d = 0
+stat_sizes.sort()
+count = 0
 for i in range(len(sizes)):
-    if sizes[i] - sizes[i-1] > 1:
-        d += sizes[i] - sizes[i-1] - 1
+    if stat_sizes[i] - stat_sizes[i-1] > 1:
+        count += stat_sizes[i] - stat_sizes[i-1] - 1
 
-print(d)
+print(count)
 
 # Through the function
 
