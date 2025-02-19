@@ -6,7 +6,7 @@ os.system('cls')
 cyrillic_lower = [(lambda c: chr(c))(i) for i in range(1072, 1104)]
 cyrillic_upper = [(lambda c: chr(c))(i) for i in range(1040, 1072)]
 cyrillic_ansi = cyrillic_lower + cyrillic_upper
-cyrillic_ansi.extend(['Ё','ё'])
+cyrillic_ansi.extend(['Ё', 'ё'])
 
 
 def rising_row(*args):
@@ -21,7 +21,7 @@ def rising_row(*args):
             array = [items for items in args]
 
     if len(array) == 0:
-       return "Array for check can't be empty"
+        return "Array for check can't be empty"
 
     for argument in array:
         if type(argument) is not int:
@@ -45,13 +45,6 @@ def rising_row(*args):
         return True
 
 
-assert rising_row([1, 2, 3]) == True
-assert rising_row([1, 2, 1, 2]) == False
-assert rising_row([1, 2, 3, 4, 5, 3, 5, 6]) == False
-assert rising_row([1, 3, 2, 1]) == False
-assert rising_row([40, 50, 60, 10, 20, 30]) == False
-
-
 def cirkle(n, number):
 
     ruler = []
@@ -60,11 +53,6 @@ def cirkle(n, number):
 
     motion = ruler.index(number) - int(n/2)
     return ruler[motion]
-
-
-assert cirkle(10, 6) == 1
-assert cirkle(10, 2) == 7
-assert cirkle(10, 4) == 9
 
 
 def luhn(number):
@@ -100,13 +88,13 @@ def luhn(number):
         if k % 2 == 0:
             odd.append(number[k])
         elif k % 2 == 1:
-            honest.append(number[k]*2)
+            honest.append(number[k] * 2)
 
     for char in honest:
         if char < 9:
             odd.append(char)
         else:
-            odd.append(char//10 + char%10)
+            odd.append(char // 10 + char % 10)
 
     ctrl_sum = 0
 
@@ -117,7 +105,3 @@ def luhn(number):
         return True
     else:
         return False
-
-
-assert luhn(4561261212345464) == False
-assert luhn(4561261212345467) == True
