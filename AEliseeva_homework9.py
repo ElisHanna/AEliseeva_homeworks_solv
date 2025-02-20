@@ -9,10 +9,7 @@ def rising_row(*args):
         return 'Please, give me some arguments'
 
     for items in args:
-        if isinstance(items, list):
-            array = list.copy(items)
-        else:
-            array = list(args)
+        array = list.copy(items) if isinstance(items, list) else list(args)
 
     if len(array) == 0:
         return "Array for check can't be empty"
