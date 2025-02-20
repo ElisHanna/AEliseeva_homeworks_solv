@@ -33,10 +33,7 @@ def rising_row(*args):
         if new_array[j] > new_array[j-1]:
             control_array.append(new_array[j])
 
-    if len(array) - len(control_array) > 1:
-        return False
-    else:
-        return True
+    return bool(len(array) - len(control_array) <= 1)
 
 
 def cirkle(n, number):
@@ -54,9 +51,7 @@ def luhn(number):
     number = str(number)
     number = number.replace(' ', '')
 
-    if len(number) == 0:
-        return 'Give me your number'
-    elif len(number) < 10 or len(number) > 19:
+    if len(number) < 13 or len(number) > 19:
         return 'Wrong lehgth, I do not trust you -_-'
 
     for compon in number:
