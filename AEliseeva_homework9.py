@@ -56,8 +56,7 @@ def luhn(number):
 
     if len(number) == 0:
         return 'Give me your number'
-    elif len(number) < 10 or\
-        len(number) > 19:
+    elif len(number) < 10 or len(number) > 19:
         return 'Wrong lehgth, I do not trust you -_-'
 
     for compon in number:
