@@ -30,7 +30,7 @@ def rising_row(*args):
         if new_array[j] > new_array[j-1]:
             control_array.append(new_array[j])
 
-    return bool(len(array) - len(control_array) <= 1)
+    return len(array) - len(control_array) <= 1
 
 
 def cirkle(n, number):
@@ -78,4 +78,4 @@ def luhn(number):
     for nums in odd:
         ctrl_sum += nums
 
-    return bool(ctrl_sum % 10 == 0)
+    return ctrl_sum % 10 == 0
