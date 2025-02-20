@@ -12,7 +12,7 @@ def rising_row(*args):
         if isinstance(items, list):
             array = list.copy(items)
         else:
-            array = [items for items in args]
+            array = list(args)
 
     if len(array) == 0:
         return "Array for check can't be empty"
@@ -67,8 +67,9 @@ def luhn(number):
     number.reverse()
     odd = []
     honest = []
+    x = len(number)
 
-    for k in range(len(number)):
+    for k in range(x):
         if k % 2 == 0:
             odd.append(number[k])
         elif k % 2 == 1:
@@ -85,7 +86,4 @@ def luhn(number):
     for nums in odd:
         ctrl_sum += nums
 
-    if ctrl_sum % 10 == 0:
-        return True
-    else:
-        return False
+    return bool(ctrl_sum % 10 == 0)
