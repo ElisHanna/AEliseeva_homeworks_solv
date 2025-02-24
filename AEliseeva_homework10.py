@@ -50,7 +50,7 @@ def letters_counter(text):
             if worm_head - worm_tail == 0:
                 newstr = newstr + text[worm_tail]
             else:
-                newstr = newstr +  text[worm_tail] + str(worm_head - worm_tail + 1)
+                newstr = newstr + text[worm_tail] + str(worm_head - worm_tail + 1)
             worm_tail = worm_head + 1
 
     return newstr
