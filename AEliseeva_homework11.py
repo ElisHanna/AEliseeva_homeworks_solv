@@ -44,8 +44,7 @@ def is_number(func):
         if not isinstance(res, int) and\
            not isinstance(res, float):
             raise ResultError("The function can return only numbers!")
-        else:
-            return func(*args, **kwargs)
+        return func(*args, **kwargs)
     return wrapper
 
 
@@ -82,7 +81,7 @@ def typed(type):
     return dec
 
 
-@typed(type = float)
+@typed(type=float)
 def add(a, b, c):
     return a + b + c
 
@@ -92,22 +91,25 @@ print(add(0.1, 0.2, 0.4))
 
 archive = {}
 
+
 def cache(record):
     def dec(func):
         def wrapper(x):
-            if record.get(x) == None:
-                record.update({x:func(x)})
+            if record.get(x) is None:
+                record.update({x: func(x)})
                 return func(x)
             else:
                 return record[x]
         return wrapper
     return dec
 
+
 @cache(archive)
 def fibonacci(n):
     if n <= 1:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 print(fibonacci(5))
 print(fibonacci(10))
