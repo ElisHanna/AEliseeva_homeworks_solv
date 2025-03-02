@@ -16,14 +16,16 @@ def validate_arguments(func):
                 raise ValueError("Some argument isn't a number!")
 
             if item <= 0:
-                    raise ValueError("Some argument isn't a positive number!")
+                raise ValueError("Some argument isn't a positive number!")
 
         return func()
     return wrapper
 
 
 @validate_arguments
-def my_great_func():
+def my_great_func(*args):
+    for i in args:
+        i += 1
     return 'have a nice day!'
 
 
