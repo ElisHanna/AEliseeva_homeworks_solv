@@ -14,7 +14,8 @@ def validate_arguments(func):
             if not isinstance(item, int) and\
                not isinstance(item, float):
                 raise ValueError("Some argument isn't a number!")
-            elif item <= 0:
+
+            if item <= 0:
                     raise ValueError("Some argument isn't a positive number!")
 
         return func()
@@ -88,7 +89,7 @@ def add(a, b, c):
 print(add(0.1, '0.2', 0.4))
 
 
-archive = {}
+archive = {}  # type: dict
 
 
 def cache(record):
