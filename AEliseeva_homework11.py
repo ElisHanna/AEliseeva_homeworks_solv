@@ -14,8 +14,7 @@ def validate_arguments(func):
             if not isinstance(item, int) and\
                not isinstance(item, float):
                 raise ValueError("Some argument isn't a number!")
-            else:
-                if item <= 0:
+            elif item <= 0:
                     raise ValueError("Some argument isn't a positive number!")
 
         return func()
@@ -23,7 +22,7 @@ def validate_arguments(func):
 
 
 @validate_arguments
-def my_great_func(*args):
+def my_great_func():
     return 'have a nice day!'
 
 
@@ -64,13 +63,13 @@ except ResultError as m:
     print(m)
 
 
-def typed(type):
+def typed(types):
     def dec(func):
         def wrapper(*args):
             new_args = []
             for item in args:
-                if not isinstance(item, type):
-                    item = type(item)
+                if not isinstance(item, types):
+                    item = types(item)
                     new_args.append(item)
                 else:
                     new_args.append(item)
@@ -81,12 +80,12 @@ def typed(type):
     return dec
 
 
-@typed(type=float)
+@typed(types=float)
 def add(a, b, c):
     return a + b + c
 
 
-print(add(0.1, 0.2, 0.4))
+print(add(0.1, '0.2', 0.4))
 
 
 archive = {}
