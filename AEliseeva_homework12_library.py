@@ -4,7 +4,6 @@ os.system('cls')
 
 class Book:
 
-
     def __init__(self, title, author, num_pages, isbn):
         self.title = title
         self.author = author
@@ -12,27 +11,20 @@ class Book:
         self.isbn = isbn
         self.status = 'available'
 
-
     def reserve(self):
         if self.status == 'available':
             self.status = 'booked'
             print(f'The book{self.title} by {self.author} is successfully booked')
-        else:
-            print(f'The book {self.title} by {self.author} is not available. Choose another book.')
-
 
     def cancel_reserve(self):
         if self.status == 'booked':
             self.status = 'available'
-            print(f'Your booking was successfully cancelled')
-
-
+            print('Your booking was successfully cancelled')
 
     def get_book(self):
         if self.status == 'booked' or self.status == 'available':
             self.status = 'borrowed'
             print('User got the book')
-
 
     def return_book(self):
         if self.status == 'borrowed':
@@ -42,12 +34,10 @@ class Book:
 
 class Reader:
 
-
     def __init__(self, name):
         self.name = name
         self.booked = []
         self.borrowed = []
-
 
     def reserve_book(self, book):
         if book.title in self.booked:
@@ -55,8 +45,8 @@ class Reader:
         elif book.status == 'available':
             self.booked.append(book.title)
             book.reserve()
-        else: book.reserve()
-
+        else:
+            print(f'The book {book.title} by {book.author} is not available. Choose another book.')
 
     def cancel_reserve(self, book):
         if book.title in self.booked:
@@ -64,7 +54,6 @@ class Reader:
             book.cancel_reserve()
         else:
             print('User did not reserve this book')
-
 
     def get_book(self, book):
         if book.title in self.booked:
@@ -76,7 +65,6 @@ class Reader:
             book.get_book()
         else:
             print(f'The book {book.title} by {book.author} is not available. Choose another book.')
-
 
     def return_book(self, book):
         if book.title in self.borrowed:
