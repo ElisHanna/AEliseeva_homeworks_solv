@@ -2,6 +2,7 @@ import os
 
 os.system('cls')
 
+
 class Book:
 
     def __init__(self, title, author, num_pages, isbn):
@@ -22,7 +23,7 @@ class Book:
             print('Your booking was successfully cancelled')
 
     def get_book(self):
-        if self.status == 'booked' or self.status == 'available':
+        if self.status in ('booked', 'available'):
             self.status = 'borrowed'
             print('User got the book')
 
@@ -90,6 +91,7 @@ john_doe.reserve_book(harry_potter1)
 jane_doe.reserve_book(harry_potter1)
 jane_doe.reserve_book(harry_potter2)
 john_doe.get_book(harry_potter1)
+john_doe.cancel_reserve(harry_potter1)
 jane_doe.reserve_book(harry_potter1)
 jane_doe.get_book(harry_potter1)
 jane_doe.return_book(harry_potter1)
