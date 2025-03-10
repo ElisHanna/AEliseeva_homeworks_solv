@@ -62,4 +62,3 @@ bank.open_deposit_account(client_id='00001', start_balance=1000, years=1)
 bank.calc_interest_rate(client_id='00001')
 bank.close_deposit(client_id='00001')
 print(bank.clients)
-
