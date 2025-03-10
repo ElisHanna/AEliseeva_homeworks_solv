@@ -58,12 +58,6 @@ class Bank:
 bank = Bank()
 
 bank.register_client(client_id='00001', name='Igor')
-
-try:
-    bank.register_client(client_id='00001', name='Ilya')
-except BankError as e:
-    print(e)
-
 bank.open_deposit_account(client_id='00001', start_balance=1000, years=1)
 bank.calc_interest_rate(client_id='00001')
 bank.close_deposit(client_id='00001')
