@@ -29,10 +29,11 @@ class CardsDeck:
     def get(self, card_num):
         self.deck = list(self.deck)
         lenght = len(self.deck)
+        index = card_num - 1
         if card_num not in range(lenght):
             print("Don't fool around please!")
         else:
-            return self.deck[card_num - 1]
+            return self.deck[index]
 
 
 deck = CardsDeck()

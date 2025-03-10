@@ -19,7 +19,7 @@ class CurrencyConverter:
     def __init__(self, rates):
         self.rates = rates
 
-    def exchange_currency(self, from_currency, amount, to_currency = 'BYN'):
+    def exchange_currency(self, from_currency, amount, to_currency='BYN'):
         if from_currency not in self.rates:
             raise BankError(f'There is no such currency {from_currency}')
 
@@ -86,9 +86,9 @@ class Bank:
 
 
 currency_rates = {
-            'BYN':{'BYN': 1.0000, 'USD': 0.3149, 'EUR': 0.2896},
-            'EUR':{'BYN': 3.4530, 'USD': 1.0872, 'EUR': 1.0000},
-            'USD':{'BYN': 3.1760, 'USD': 1.0000, 'EUR': 0.9198}
+            'BYN': {'BYN': 1.0000, 'USD': 0.3149, 'EUR': 0.2896},
+            'EUR': {'BYN': 3.4530, 'USD': 1.0872, 'EUR': 1.0000},
+            'USD': {'BYN': 3.1760, 'USD': 1.0000, 'EUR': 0.9198}
     }
 
 converter = CurrencyConverter(rates=currency_rates)
