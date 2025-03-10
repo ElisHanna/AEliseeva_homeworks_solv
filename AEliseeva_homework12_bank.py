@@ -22,6 +22,8 @@ class Bank:
             self.client_id = client_id
             self.name = name
             self.clients.append(client_id)
+        else:
+            raise BankError('Client is already registered')
 
     def open_deposit_account(self, client_id, start_balance, years):
         if client_id in self.clients:
@@ -49,8 +51,6 @@ class Bank:
             self.start_balance = None
             self.years = None
             self.interest = None
-        else:
-            raise BankError('Client is not registered!')
 
 
 # client_id = '00001'
@@ -58,6 +58,14 @@ class Bank:
 bank = Bank()
 
 bank.register_client(client_id='00001', name='Igor')
+
+try:
+    bank.register_client(client_id='00001', name='Ilya')
+except BankError as e:
+    print(e)
+
 bank.open_deposit_account(client_id='00001', start_balance=1000, years=1)
 bank.calc_interest_rate(client_id='00001')
 bank.close_deposit(client_id='00001')
+print(bank.clients)
+
