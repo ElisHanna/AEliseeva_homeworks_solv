@@ -85,13 +85,13 @@ class Bank:
             self.interest = None
 
 
-rates = {
-            'BYN':{'BYN':1.0000, 'USD':0.3149, 'EUR':0.2896},
-            'EUR':{'BYN':3.4530, 'USD':1.0872, 'EUR':1.0000},
-            'USD':{'BYN':3.1760, 'USD':1.0000, 'EUR':0.9198}
+currency_rates = {
+            'BYN':{'BYN': 1.0000, 'USD': 0.3149, 'EUR': 0.2896},
+            'EUR':{'BYN': 3.4530, 'USD': 1.0872, 'EUR': 1.0000},
+            'USD':{'BYN': 3.1760, 'USD': 1.0000, 'EUR': 0.9198}
     }
 
-converter = CurrencyConverter(rates = rates)
+converter = CurrencyConverter(rates=currency_rates)
 
 vasya = Person('USD', 10)
 petya = Person('EUR', 5)
