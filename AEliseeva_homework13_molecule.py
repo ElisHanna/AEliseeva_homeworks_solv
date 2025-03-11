@@ -9,7 +9,7 @@ def formule_transformation(form):
     """
     This function transforms chemical formuls into the dictionary,
     that contains elements symbols and their quantity in molecule.
-    For making this function work, the module 'chempy' slould be installed.
+    For making this function work, the library 'chempy' slould be installed.
     """
     f = Substance.from_formula(form)
     elements = []
@@ -17,7 +17,7 @@ def formule_transformation(form):
     for i in f.composition:
         elements.append(P.symbols[i-1])
         numbers.append(f.composition[i])
-    result = {e: n for e, n in zip(elements, numbers)}
+    result = dict(zip(elements, numbers))
     print(result)
 
 
