@@ -1,6 +1,6 @@
 import os
-from chempy import Substance
-from chempy.util import periodic as P
+import chempy
+
 
 os.system('cls')
 
@@ -11,11 +11,11 @@ def formule_transformation(form):
     that contains elements symbols and their quantity in molecule.
     For making this function work, the library 'chempy' slould be installed.
     """
-    f = Substance.from_formula(form)
+    f = chempy.Substance.from_formula(form)
     elements = []
     numbers = []
     for i in f.composition:
-        elements.append(P.symbols[i-1])
+        elements.append(chempy.util.periodic.symbols[i-1])
         numbers.append(f.composition[i])
     result = dict(zip(elements, numbers))
     print(result)
