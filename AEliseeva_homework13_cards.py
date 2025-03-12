@@ -8,9 +8,12 @@ class Card:
     number_list = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
     suit_list = ['Diamonds', 'Hearts', 'Spades', 'Clubs']
 
-    def __init__(self):
-        self.number_list = Card.number_list
-        self.suit_list = Card.suit_list
+    def __init__(self, suit, number):
+        self.number = number
+        self.suit = suit
+
+    def __str__(self):
+        return f'{self.suit} {self.number}'
 
 
 class CardsDeck:
@@ -22,14 +25,14 @@ class CardsDeck:
         self.deck = ['Night Joker', 'Day Joker']
         for suit in Card.suit_list:
             for number in Card.number_list:
-                self.deck.append(suit + ' ' + number)
+                self.deck.append(Card(suit, number))
         self.deck = set(self.deck)
         return self.deck
 
     def get(self, card_num):
         self.deck = list(self.deck)
         lenght = len(self.deck)
-        if card_num not in range(lenght):
+        if card_number not in range(1, lenght+1):
             print("Don't fool around please!")
             return None
         else:
