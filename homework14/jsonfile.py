@@ -17,5 +17,5 @@ with open('teams.json', 'w') as file:
 with open('teams.json') as file:
     data = json.load(file)
 
-winner = max(data, key = lambda x: data[x]["wins"])
+winner = max(data, key=lambda x: data[x]["wins"])
 print(f'{winner}: {data[winner]}')
