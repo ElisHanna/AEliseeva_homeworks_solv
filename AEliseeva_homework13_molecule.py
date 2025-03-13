@@ -18,7 +18,7 @@ def formule_transformation(form):
         elements.append(chempy.util.periodic.symbols[i-1])
         numbers.append(f.composition[i])
     result = dict(zip(elements, numbers))
-    print(result)
+    return result
 
 
 formule_transformation('H2O')
