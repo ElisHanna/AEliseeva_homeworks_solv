@@ -1,0 +1,18 @@
+
+<goods>
+    <product>
+        <name>Cactus</name>
+        <price>25</price>
+        <qt>3</qt>
+    </product>
+    <product>
+        <name>Orchid</name>
+        <price>50</price>
+        <qt>7</qt>
+    </product>
+    <product>
+        <name>Sunflower</name>
+        <price>17</price>
+        <qt>10</qt>
+    </product>
+</goods>
