@@ -15,10 +15,10 @@ myfile = open('students.txt', 'r')
 content = myfile.readlines()
 
 analys = []
-for lines in content:
-    lines = lines.replace('\n', '')
-    lines = lines.split(', ')
-    analys.append(lines)
+for line in content:
+    line = line.replace('\n', '')
+    splitted = line.split(', ')
+    analys.append(splitted)
 
 students_count = len(analys)
 
