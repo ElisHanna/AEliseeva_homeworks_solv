@@ -3,16 +3,15 @@ import os
 os.system('cls')
 
 
-myfile = open('students.txt', 'w')
-myfile.write('Ivanov Ivan, 130, 9\n')
-myfile.write('Petrov Petr, 130, 7\n')
-myfile.write('Sidorov Sidor, 131, 8\n')
-myfile.write('Agrafova Agrafena, 131, 9\n')
-myfile.write('Lampovaya Evlampiya, 131, 6\n')
-myfile.close()
+with open('students.txt', 'w') as myfile:
+    myfile.write('Ivanov Ivan, 130, 9\n')
+    myfile.write('Petrov Petr, 130, 7\n')
+    myfile.write('Sidorov Sidor, 131, 8\n')
+    myfile.write('Agrafova Agrafena, 131, 9\n')
+    myfile.write('Lampovaya Evlampiya, 131, 6\n')
 
-myfile = open('students.txt', 'r')
-content = myfile.readlines()
+with open('students.txt') as file:
+    content = file.readlines()
 
 analys = []
 for line in content:
@@ -38,9 +37,8 @@ for stud in analys:
 common_130 = round((sum_130/count_130), 2)
 common_131 = round((sum_131/count_131), 2)
 
-myfile.close()
-myfile = open('students.txt', 'a')
-myfile.write(f'List contains {students_count} students\n')
-myfile.write(f'In group 130 are{count_130} students, common mark is {common_130} \n')
-myfile.write(f'In group 131 are{count_131} students, common mark is {common_131} \n')
-myfile.close()
+with open('students.txt', 'a') as f:
+    f.write(f'List contains {students_count} students\n')
+    f.write(f'In group 130 are {count_130} students, common mark is {common_130} \n')
+    f.write(f'In group 131 are {count_131} students, common mark is {common_131} \n')
+    
