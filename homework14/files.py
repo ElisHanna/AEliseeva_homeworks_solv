@@ -41,4 +41,3 @@ with open('students.txt', 'a') as f:
     f.write(f'List contains {students_count} students\n')
     f.write(f'In group 130 are {count_130} students, common mark is {common_130} \n')
     f.write(f'In group 131 are {count_131} students, common mark is {common_131} \n')
-    
