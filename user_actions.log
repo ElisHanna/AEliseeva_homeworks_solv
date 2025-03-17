@@ -1,4 +1,0 @@
-2025-03-17 18:00:47,515 - INFO - a=5, b=6
-2025-03-17 18:00:47,515 - INFO - Successful division with result 0.8333333333333334
-2025-03-17 18:00:58,692 - INFO - a=10, b=0
-2025-03-17 18:00:58,693 - ERROR - ZeroDivisionError
