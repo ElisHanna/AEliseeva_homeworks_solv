@@ -6,13 +6,17 @@ os.system('cls')
 with open('regexp.txt') as testfile:
     text = testfile.readlines()
 
-pattern = r"(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{4})"
-res = []
-for lines in text:
-    result = re.search(pattern, lines)
-    if result is not None:
-        res.append(result.group())
-print(res)
+def looking_for_dates(doc):
+    pattern = r"(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{4})"
+    res = []
+    for lines in doc:
+        result = re.search(pattern, lines)
+        if result is not None:
+            res.append(result.group())
+    return res
+
+
+looking_for_dates(text)
 
 
 def password_check(password):
