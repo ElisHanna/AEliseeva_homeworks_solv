@@ -17,7 +17,6 @@ if not logger.hasHandlers():
     file.setFormatter(formatter)
     logger.addHandler(stream)
     logger.addHandler(file)
-    logger.set_handler = True
 
 
 def my_division():
@@ -29,5 +28,5 @@ def my_division():
 
 try:
     logger.info(f'Successful division with result {my_division()}')
-except ZeroDivisionError as e:
+except ZeroDivisionError:
     logger.error('ZeroDivisionError', exc_info=False)

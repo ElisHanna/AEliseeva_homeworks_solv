@@ -3,6 +3,7 @@ from datetime import date, datetime
 
 os.system('cls')
 
+
 def days_difference():
     first_point = input('Enter the first date format YYYY-MM-DD:')
     second_point = input('Enter the second date format YYYY-MM-DD:')

@@ -20,5 +20,5 @@ def my_division():
 
 try:
     logging.info(f'Successful division with result {my_division()}')
-except ZeroDivisionError as e:
+except ZeroDivisionError:
     logging.error('ZeroDivisionError', exc_info=False)

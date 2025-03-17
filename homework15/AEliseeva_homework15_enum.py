@@ -22,8 +22,8 @@ class Order:
         self.status = status
 
     def display_status(self):
-            call = OrderStatus(self.status)
-            print(f'Order {self.id} has status {call.name}')
+        call = OrderStatus(self.status)
+        print(f'Order {self.id} has status {call.name}')
 
 
 first_order = Order('0001')

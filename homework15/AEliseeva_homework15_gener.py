@@ -8,6 +8,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
     )
 
+
 def sum_numbers(n):
     array = [i for i in range(1, n+1)]
     return sum(array)
@@ -23,7 +24,7 @@ def is_psrime(n):
 def prime_numbers(start, end):
     for number in range(start, end+1):
         if number > 2:
-            if is_psrime(number) == True:
+            if is_psrime(number) is True:
                 yield number
 
 
