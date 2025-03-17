@@ -14,6 +14,16 @@ def sum_numbers(n):
     return sum(array)
 
 
+# or
+def nums(n):
+    for num in range(1, n+1):
+        yield num
+
+
+gener = nums(10)
+logging.info(sum(gener))
+
+
 def is_psrime(n):
     d = 2
     while n % d != 0:
