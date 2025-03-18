@@ -27,5 +27,6 @@ def readfile(file):
         print(f'Text contains {words} words')
         print(f'Text contains {letters} letters')
 
+
 filename = 'lorem.txt'
 readfile(file=filename)

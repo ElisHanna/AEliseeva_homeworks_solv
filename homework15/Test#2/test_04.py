@@ -13,7 +13,7 @@ def plus_one(lst):
     return [1] + lst
 
 
-assert plus_one([9]) == [1,0]
-assert plus_one([1,2,3]) == [1,2,4]
-assert plus_one([1,1,9]) == [1,2,0]
-assert plus_one([9,9,9]) == [1,0,0,0]
+assert plus_one([9]) == [1, 0]
+assert plus_one([1, 2, 3]) == [1, 2, 4]
+assert plus_one([1, 1, 9]) == [1, 2, 0]
+assert plus_one([9, 9, 9]) == [1, 0, 0, 0]

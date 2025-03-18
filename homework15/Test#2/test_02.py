@@ -2,6 +2,7 @@ import os
 
 os.system('cls')
 
+
 def square(n):
     return n**2
 
@@ -15,6 +16,7 @@ def honest_or_odd(m):
         return f'{m} is honest'
     else:
         return f'{m} is odd'
+
 
 number = int(input('Enter your number: '))
 print(honest_or_odd(number))
