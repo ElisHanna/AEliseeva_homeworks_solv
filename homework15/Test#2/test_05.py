@@ -5,6 +5,9 @@ os.system('cls')
 
 
 def is_palindrome(line):
+    if isinstance(line, int) or\
+       isinstance(line, float):
+        line = str(line)
     line = str.upper(line)
     line = line.replace(' ', '')
     line = line.translate(str.maketrans('', '', string.punctuation))
@@ -18,5 +21,7 @@ def is_palindrome(line):
 
 strin = 'Гни, комсомол, лом о смокинг.'
 strin_2 = 'Три мухомора на полянке'
+numb = 535
 print(is_palindrome(strin))
 print(is_palindrome(strin_2))
+print(is_palindrome(numb))
