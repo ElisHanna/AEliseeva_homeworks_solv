@@ -49,7 +49,7 @@ class TestLibrary(unittest.TestCase):
                          'User has already booked this book')
         self.assertEqual(TestLibrary.reader_two.reserve_book(self.book_one),
                          f'{self.book_one.title} by {self.book_one.author} is not available. '
-                          'Choose another book.')
+                         'Choose another book.')
 
     def test_fcancel_reserve(self):
         self.assertEqual(TestLibrary.reader_two.cancel_reserve(self.book_one),
@@ -65,7 +65,7 @@ class TestLibrary(unittest.TestCase):
     def test_get_book(self):
         self.assertEqual(TestLibrary.reader_one.get_book(self.book_two),
                          f'{self.book_two.title} by {self.book_two.author} is not available. '
-                          'Choose another book.')
+                         'Choose another book.')
         self.assertIn(self.book_two.title, self.reader_two.booked)
         self.assertEqual(TestLibrary.reader_two.get_book(self.book_two),
                          self.book_two.get_book())
