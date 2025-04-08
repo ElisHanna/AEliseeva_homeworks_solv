@@ -16,10 +16,10 @@ class TestBank(unittest.TestCase):
         cls.bank = Bank()
 
     def test_exchange_currency(self):
-        self.assertEqual(TestBank.conv.exchange_currency(self.cust1.currency, self.cust1.amount),\
-        (47.64, 'BYN'))
-        self.assertNotEqual(TestBank.conv.exchange_currency(self.cust2.currency,\
-        self.cust2.amount, 'USD'), (103.59, 'BYN'))
+        self.assertEqual(TestBank.conv.exchange_currency(self.cust1.currency, self.cust1.amount),
+                         (47.64, 'BYN'))
+        self.assertNotEqual(TestBank.conv.exchange_currency(self.cust2.currency,
+                            self.cust2.amount, 'USD'), (103.59, 'BYN'))
 
     def test_aregister_client(self):
         self.assertIsNone(self.bank.register_client('0001', 'George'))
@@ -43,18 +43,18 @@ class TestBank(unittest.TestCase):
         self.assertRaises(BankError, self.bank.calc_interest_rate, '0002')
 
     def test_cconvert_currency(self):
-        self.assertEqual(TestBank.bank.convert_currency('0001', 'BYN', 10, 'EUR'),\
-        (2.9, 'EUR'))
-        self.assertEqual(TestBank.bank.convert_currency('0001', 'BYN', 10),\
-        (10, 'BYN'))
+        self.assertEqual(TestBank.bank.convert_currency('0001', 'BYN', 10, 'EUR'),
+                         (2.9, 'EUR'))
+        self.assertEqual(TestBank.bank.convert_currency('0001', 'BYN', 10),
+                         (10, 'BYN'))
         self.assertRaises(BankError, self.bank.convert_currency, '0002', 'USD', 50, 'EUR')
         self.assertRaises(TypeError, self.bank.convert_currency, '0002')
 
     def test_close_deposit(self):
         self.assertIsNone(self.bank.close_deposit('0002'))
         self.assertIn('0001', self.bank.clients)
-        self.assertEqual(TestBank.bank.close_deposit('0001'),\
-        f'Client got {self.bank.res} money. Deposit is closed')
+        self.assertEqual(TestBank.bank.close_deposit('0001'),
+                         f'Client got {self.bank.res} money. Deposit is closed')
 
 
 if __name__ == '__main__':
