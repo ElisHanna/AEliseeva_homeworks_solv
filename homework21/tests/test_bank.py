@@ -38,7 +38,7 @@ def test_exchange_currency(converter, cust_one, cust_two):
 
 
 def test_register_client(bank):
-    assert bank.register_client('0001', 'George') == None
+    assert bank.register_client('0001', 'George') is None
     assert bank.client_id in bank.clients
     with pytest.raises(BankError) as excinfo:
         bank.register_client('0001', 'George')
@@ -48,13 +48,13 @@ def test_register_client(bank):
 
 def test_open_deposit_account(bank):
     bank.clients = ['0001']
-    assert bank.open_deposit_account('0001', 1000, 3) == None
+    assert bank.open_deposit_account('0001', 1000, 3) is None
     with pytest.raises(BankError) as excinfo:
         bank.open_deposit_account('0002', 5000, 2)
         assert 'Client is not registered!' in str(excinfo.value)
-    with pytest.raises(TypeError):
+    with pytest.raises(TypeError) as exc:
         bank.open_deposit_account('0002')
-        assert TypeError
+        assert exc is True
     logger.info('Test test_open_deposit_account passed')
 
 
@@ -80,5 +80,5 @@ def test_close_deposit(bank):
     bank.open_deposit_account('0001', 1000, 3)
     bank.calc_interest_rate('0001')
     assert bank.close_deposit('0001') == f'Client got {bank.res} money. Deposit is closed'
-    assert bank.close_deposit('0002') == None
+    assert bank.close_deposit('0002') is None
     logger.info('Test test_close_deposit passed')
