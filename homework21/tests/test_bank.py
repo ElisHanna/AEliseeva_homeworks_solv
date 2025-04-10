@@ -4,10 +4,6 @@ from apps.bank import BankError, Person, CurrencyConverter, Bank, currency_rates
 
 
 logger = logging.getLogger()
-file = logging.FileHandler('test_bank_pytest.log')
-file.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
-logger.addHandler(file)
-logger.setLevel(logging.DEBUG)
 
 
 @pytest.fixture
