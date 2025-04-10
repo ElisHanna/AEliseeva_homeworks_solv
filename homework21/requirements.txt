@@ -1,0 +1,8 @@
+flake8
+pycodestyle
+mypy
+ruff
+pylint
+chempy
+pytest
+pytest-html
