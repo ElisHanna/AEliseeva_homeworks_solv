@@ -1,0 +1,73 @@
+Экран логина:
+
+    Ввод имени пользователя:
+        [name="user-name"]
+        Имя пользователя: standard_user
+
+    Ввод пароля:
+        [name="password"]
+        Пароль: secret_sauce
+
+    Нажать кнопку 'Login':
+        [name="login-button"]
+
+Экран главной страницы:
+
+    Нажать кнопку "Add to cart":
+        [name="add-to-cart-sauce-labs-backpack"]
+        [name="add-to-cart-sauce-labs-bike-light"]
+        [name="add-to-cart-sauce-labs-bolt-t-shirt"]
+        [name="add-to-cart-sauce-labs-fleece-jacket"]
+        [name="add-to-cart-sauce-labs-onesie"]
+        [name="add-to-cart-test.allthethings()-t-shirt-(red)"]
+
+    Нажать кнопку "Remove":
+        [name="remove-sauce-labs-onesie"]
+        [name="remove-test.allthethings()-t-shirt-(red)"]
+
+    Перейти в корзину:
+        [class="shopping_cart_link"]
+
+Экран корзины:
+
+    Нажать кнопку "Remove":
+        [name="remove-sauce-labs-fleece-jacket"]
+        [name="remove-sauce-labs-backpack"]
+
+    Нажать кнопку "Checkout":
+        [name="checkout"]
+
+Экран "Checkout":
+
+    Ввести имя:
+        [name="firstName"]
+        Имя: John
+
+    Ввести фамилию:
+        [name="lastName"]
+        Фамилия: Walker
+
+    Ввести почтовый код:
+        [name="postalCode"]
+        Почтовый код: 212850
+
+    Перести по ссылке "Continue":
+        [name="continue"]
+
+Экран "Checkout: Owerwiew":
+
+    Нажать кнопку "Finish":
+        [name="finish"]
+
+Экран "Checkout: Complete":
+
+    Нажать кнопку "Back Home":
+        [name="back-to-products"]
+
+Экран главной страницы:
+
+    Открыть выпадающее меню:
+        [id="react-burger-menu-btn"]
+
+    Перейти по ссылке "Logout":
+        [id="logout_sidebar_link"]
