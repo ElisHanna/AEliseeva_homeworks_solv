@@ -14,14 +14,12 @@ Verify Conversion Between BYN and USD
     Should Be Equal As Numbers    ${result}[0]    31.49
 
 Test Client Registration
-    [Documentation]
     ${bank}=    Evaluate    bank.Bank()
     ${result}=    Evaluate    '${bank.register_client('123', 'Alice')}'
     Should Be Equal    ${result}    None
 
 
 Test Interest Calculation
-    [Documentation]    Verify interest is calculated correctly for deposit
     ${bank}=    Evaluate    bank.Bank()
     Evaluate   '${bank.register_client('123', 'Alice')}'
     Evaluate   '${bank.open_deposit_account('123', 1000, 2)}'
@@ -29,7 +27,6 @@ Test Interest Calculation
     Should Be Equal As Numbers    ${interest}    1220.39
 
 Test Closing Deposit
-    [Documentation]    Verify closing deposit functionality
     ${bank}=    Evaluate    bank.Bank()
     Evaluate    '${bank.register_client('123', 'Alice')}'
     Evaluate    '${bank.open_deposit_account('123', 1000, 2)}'
