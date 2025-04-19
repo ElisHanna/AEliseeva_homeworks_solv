@@ -36,7 +36,7 @@ def test_bying(driver, login):
     rm_bttn1 = driver.find_element(By.CSS_SELECTOR, '[name="remove-sauce-labs-onesie"]')
     rm_bttn1.click()
     rm_bttn2 = driver.find_element(By.CSS_SELECTOR,
-                               '[name="remove-test.allthethings()-t-shirt-(red)"]')
+                                   '[name="remove-test.allthethings()-t-shirt-(red)"]')
     rm_bttn2.click()
     cart_bttn = driver.find_element(By.CSS_SELECTOR, '[class="shopping_cart_link"]')
     cart_bttn.click()
