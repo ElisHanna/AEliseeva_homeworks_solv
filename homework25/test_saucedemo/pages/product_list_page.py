@@ -5,12 +5,11 @@ from selenium.webdriver.common.by import By
 
 class ProductListPage(BasePage):
 
-    url =  "https://www.saucedemo.com/inventory.html"
+    url = "https://www.saucedemo.com/inventory.html"
     add_bttns = (By.CSS_SELECTOR, '[class="btn btn_primary btn_small btn_inventory "]')
     rm_bttn1 = (By.CSS_SELECTOR, '[name="remove-sauce-labs-onesie"]')
     rm_bttn2 = (By.CSS_SELECTOR, '[name="remove-test.allthethings()-t-shirt-(red)"]')
     cart_bttn = (By.CSS_SELECTOR, '[class="shopping_cart_link"]')
-
 
     def __init__(self, driver, url):
         super().__init__(driver, url=url)

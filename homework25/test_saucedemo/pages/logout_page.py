@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 
+
 class LogoutPage(BasePage):
 
     url = 'https://www.saucedemo.com/'
