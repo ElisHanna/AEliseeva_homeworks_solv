@@ -1,5 +1,5 @@
 import os
-import yaml
+# import yaml
 
 os.system('cls')
 
@@ -9,8 +9,8 @@ books = [
     {'name': 'The time machine', 'Author': 'Herbert Wells', 'year': 2003},
     {'name': 'Footprints on me', 'Author': 'Eugen Grishovets', 'year': 2009},
 ]
-with open("books.yaml", "w") as file:
-    yaml.dump(books, file)
+# with open("books.yaml", "w") as file:
+    # yaml.dump(books, file)
 
 
 def reading(filename):
@@ -26,7 +26,7 @@ to_record = {
     'Author': input("Enter author's name "),
     'year': input('Enter the year')
     }
-with open('books.yaml', 'a') as f:
-    yaml.dump(to_record, f)
+# with open('books.yaml', 'a') as f:
+    # yaml.dump(to_record, f)
 
 reading('books.yaml')
