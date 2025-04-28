@@ -1,4 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage():
@@ -15,14 +17,15 @@ class BasePage():
         input_field.clear()
         input_field.send_keys(text)
 
-    def click_button(self, locator):
-        button = self.driver.find_element(*locator)
+    def click_button(self, locator, timeout=10):
+        button = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
         button.click()
 
-    def click_buttons(self, locator):
+    def click_buttons(self, locator, timeout=10):
         buttons = self.driver.find_elements(*locator)
         for button in buttons:
-            button.click()
+            clc_button = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(button))
+            clc_button.click()
 
     def check_number(self, locator, number):
         items_list = self.driver.find_elements(*locator)
