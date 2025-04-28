@@ -23,8 +23,8 @@ class BasePage():
 
     def click_buttons(self, locator, timeout=10):
         buttons = self.driver.find_elements(*locator)
-        for button in buttons:
-            clc_button = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(button))
+        for btn in buttons:
+            clc_button = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(btn))
             clc_button.click()
 
     def check_number(self, locator, number):
