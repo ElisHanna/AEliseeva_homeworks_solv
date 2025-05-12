@@ -34,7 +34,7 @@ class ApiActions:
                                             "checkout": {"type": "string"}
                                          },
                                          "required": ["checkin", "checkout"]
-                         },
+                                        },
                         "additionalneeds": {"type": "string"}
                     },
                     "required": ["firstname", "lastname", "totalprice",
@@ -56,8 +56,8 @@ class ApiActions:
                                     "checkin": {"type": "string"},
                                     "checkout": {"type": "string"}
                                  },
-                    "required": ["checkin", "checkout"]
-                },
+                                     "required": ["checkin", "checkout"]
+                                },
                 "additionalneeds": {"type": "string"}
             },
             "required": ["firstname", "lastname", "totalprice",
