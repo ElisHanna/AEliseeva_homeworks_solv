@@ -6,3 +6,4 @@ pylint
 chempy
 selenium
 requests
+types-requests
