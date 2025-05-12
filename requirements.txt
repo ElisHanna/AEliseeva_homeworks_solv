@@ -7,3 +7,5 @@ chempy
 selenium
 requests
 types-requests
+urllib3
+types-PyYAML
