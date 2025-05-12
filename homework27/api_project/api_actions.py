@@ -32,10 +32,10 @@ class ApiActions:
                                          "properties": {
                                             "checkin": {"type": "string"},
                                             "checkout": {"type": "string"}
-                                        },
+                                         },
                             "required": ["checkin", "checkout"]
                         },
-                    "additionalneeds": {"type": "string"}
+                                         "additionalneeds": {"type": "string"}
                     },
                     "required": ["firstname", "lastname", "totalprice",
                                  "depositpaid", "bookingdates", "additionalneeds"]
