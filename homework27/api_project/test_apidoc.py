@@ -2,7 +2,7 @@ import logging
 import pytest
 import requests
 from api_actions import ApiActions
-from test_data import TestData as TD
+from api_project.test_data import TestData as TD
 
 
 logger = logging.getLogger()
