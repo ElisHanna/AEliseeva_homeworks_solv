@@ -5,3 +5,4 @@ ruff
 pylint
 chempy
 selenium
+requests
