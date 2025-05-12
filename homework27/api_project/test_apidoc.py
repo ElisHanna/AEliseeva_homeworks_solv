@@ -2,7 +2,7 @@ import logging
 import pytest
 import requests
 from api_actions import ApiActions
-from test_data import new_booking_body, put_upd_body, patch_upd_body
+from test_data import TestData as TD
 
 
 logger = logging.getLogger()
@@ -21,7 +21,7 @@ def test_get_token():
 
 def test_create_new_booking():
     request = ApiActions()
-    new_booking = request.create_booking(new_booking_body)
+    new_booking = request.create_booking(TD.new_booking_body)
     assert new_booking.status_code == 200
     logger.info('Status code is 200')
     assert request.is_response_schema_correct(new_booking, request.new_booking_schema)
@@ -30,7 +30,7 @@ def test_create_new_booking():
 
 def test_get_new_booking():
     request = ApiActions()
-    new_booking = request.create_booking(new_booking_body)
+    new_booking = request.create_booking(TD.new_booking_body)
     new_id = new_booking.json()["bookingid"]
     booking = request.get_booking(new_id)
     assert booking.status_code == 200
@@ -41,10 +41,10 @@ def test_get_new_booking():
 
 def test_update_booking():
     request = ApiActions()
-    booking = request.create_booking(new_booking_body)
+    booking = request.create_booking(TD.new_booking_body)
     token = request.create_token()
     id = booking.json()["bookingid"]
-    upd_booking = request.update_booking(token, id, put_upd_body)
+    upd_booking = request.update_booking(token, id, TD.put_upd_body)
     assert upd_booking.status_code == 200
     logger.info('Status code is 200')
     assert request.is_response_schema_correct(upd_booking, request.common_booking_schema)
@@ -53,10 +53,10 @@ def test_update_booking():
 
 def test_part_update_booking():
     request = ApiActions()
-    booking = request.create_booking(new_booking_body)
+    booking = request.create_booking(TD.new_booking_body)
     token = request.create_token()
     id = booking.json()["bookingid"]
-    upd_booking = request.part_update_booking(token, id, patch_upd_body)
+    upd_booking = request.part_update_booking(token, id, TD.patch_upd_body)
     assert upd_booking.status_code == 200
     logger.info('Status code is 200')
     assert request.is_response_schema_correct(upd_booking, request.common_booking_schema)
@@ -65,7 +65,7 @@ def test_part_update_booking():
 
 def test_delete_booking():
     request = ApiActions()
-    booking = request.create_booking(new_booking_body)
+    booking = request.create_booking(TD.new_booking_body)
     token = request.create_token()
     id = booking.json()["bookingid"]
     delete = request.delete_booking(token, id)
