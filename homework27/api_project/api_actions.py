@@ -4,6 +4,7 @@ from loguru import logger
 from jsonschema import validate, ValidationError
 from env import Env
 
+
 class ApiActions:
 
     def __init__(self):
@@ -12,8 +13,8 @@ class ApiActions:
             'Content-Type': 'application/json'
         }
         self.login_data = {
-            "username" : "admin",
-            "password" : "password123"
+            "username": "admin",
+            "password": "password123"
         }
 
         self.new_booking_schema = {
@@ -28,16 +29,16 @@ class ApiActions:
                         "totalprice": {"type": "integer"},
                         "depositpaid": {"type": "boolean"},
                         "bookingdates": {"type": "object",
-                        "properties": {
-                            "checkin": {"type": "string"},
-                            "checkout": {"type": "string"}
-                        },
-                    "required": ["checkin", "checkout"]
+                                         "properties": {
+                                            "checkin": {"type": "string"},
+                                            "checkout": {"type": "string"}
+                                        },
+                            "required": ["checkin", "checkout"]
                         },
                     "additionalneeds": {"type": "string"}
                     },
-                "required": ["firstname", "lastname", "totalprice",
-                             "depositpaid", "bookingdates", "additionalneeds"]
+                    "required": ["firstname", "lastname", "totalprice",
+                                 "depositpaid", "bookingdates", "additionalneeds"]
                 }
             },
             "required": ["bookingid", "booking"]
@@ -51,10 +52,10 @@ class ApiActions:
                 "totalprice": {"type": "integer"},
                 "depositpaid": {"type": "boolean"},
                 "bookingdates": {"type": "object",
-                    "properties": {
-                        "checkin": {"type": "string"},
-                        "checkout": {"type": "string"}
-                    },
+                                 "properties": {
+                                    "checkin": {"type": "string"},
+                                    "checkout": {"type": "string"}
+                                },
                     "required": ["checkin", "checkout"]
                 },
                 "additionalneeds": {"type": "string"}
@@ -149,5 +150,5 @@ class ApiActions:
             current_schema = response.json()
             validate(current_schema, exp_schema)
             return True
-        except ValidationError as v:
+        except ValidationError:
             return False

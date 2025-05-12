@@ -1,7 +1,7 @@
 import logging
 import pytest
 import requests
-from  api_actions import ApiActions
+from api_actions import ApiActions
 from test_data import new_booking_body, put_upd_body, patch_upd_body
 
 
