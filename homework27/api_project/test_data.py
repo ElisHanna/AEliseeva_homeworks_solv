@@ -1,4 +1,7 @@
 class TestData:
+    def __init__(self):
+        pass
+
     new_booking_body = {
         "firstname": "Annie",
         "lastname": "Profit",
