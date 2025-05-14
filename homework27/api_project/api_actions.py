@@ -78,7 +78,6 @@ class ApiActions:
             }
         return header
 
-
     def get_booking(self, id):
         booking_data = None
         try:
