@@ -42,9 +42,8 @@ def test_get_new_booking():
 def test_update_booking():
     request = ApiActions()
     booking = request.create_booking(TD.new_booking_body)
-    token = request.create_token()
     id = booking.json()["bookingid"]
-    upd_booking = request.update_booking(token, id, TD.put_upd_body)
+    upd_booking = request.update_booking(id, TD.put_upd_body)
     assert upd_booking.status_code == 200
     logger.info('Status code is 200')
     assert request.is_response_schema_correct(upd_booking, request.common_booking_schema)
@@ -54,9 +53,8 @@ def test_update_booking():
 def test_part_update_booking():
     request = ApiActions()
     booking = request.create_booking(TD.new_booking_body)
-    token = request.create_token()
     id = booking.json()["bookingid"]
-    upd_booking = request.part_update_booking(token, id, TD.patch_upd_body)
+    upd_booking = request.part_update_booking(id, TD.patch_upd_body)
     assert upd_booking.status_code == 200
     logger.info('Status code is 200')
     assert request.is_response_schema_correct(upd_booking, request.common_booking_schema)
@@ -66,9 +64,8 @@ def test_part_update_booking():
 def test_delete_booking():
     request = ApiActions()
     booking = request.create_booking(TD.new_booking_body)
-    token = request.create_token()
     id = booking.json()["bookingid"]
-    delete = request.delete_booking(token, id)
+    delete = request.delete_booking(id)
     assert delete.status_code == 201
     logger.info('Status code is 200')
 
@@ -82,8 +79,7 @@ def test_get_booking_doesnt_exist():
 
 def test_delete_booking_without_auth():
     request = ApiActions()
-    token = None
-    delete = request.delete_booking(token, '1')
+    delete = requests.delete(url=f'{request.booking_acts_url}/1', headers=None)
     assert delete.status_code == 403
     logger.info('Status code is 403')
 

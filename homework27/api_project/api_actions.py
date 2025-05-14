@@ -9,6 +9,7 @@ class ApiActions:
 
     def __init__(self):
         self.url = Env.url
+        self.booking_acts_url = f'{self.url}booking'
         self.header = {
             'Content-Type': 'application/json'
         }
@@ -69,11 +70,19 @@ class ApiActions:
         token = answer.json()['token']
         return token
 
+    def auth_and_get_token(self):
+        token = self.create_token()
+        header = {
+            'Accept': 'application/json',
+            'Cookie': f'token={token}'
+            }
+        return header
+
+
     def get_booking(self, id):
-        url = f'{self.url}booking/{id}'
         booking_data = None
         try:
-            booking_data = requests.get(url=url, headers=self.header)
+            booking_data = requests.get(url=f'{self.booking_acts_url}/{id}', headers=self.header)
             booking_data.raise_for_status()
             return booking_data
         except requests.exceptions.HTTPError as h:
@@ -84,10 +93,9 @@ class ApiActions:
             return None
 
     def create_booking(self, body):
-        url = f'{self.url}booking'
         new_booking = None
         try:
-            new_booking = requests.post(url=url, headers=self.header, json=body)
+            new_booking = requests.post(url=self.booking_acts_url, headers=self.header, json=body)
             new_booking.raise_for_status()
             return new_booking
         except requests.exceptions.HTTPError as h:
@@ -97,15 +105,11 @@ class ApiActions:
             logger.warning(f'Request error occured: {r}')
             return None
 
-    def update_booking(self, token, id, body):
-        url = f'{self.url}booking/{id}'
-        header = {
-            'Accept': 'application/json',
-            'Cookie': f'token={token}'
-            }
+    def update_booking(self, id, body):
+        header = self.auth_and_get_token()
         updated = None
         try:
-            updated = requests.put(url=url, headers=header, json=body)
+            updated = requests.put(url=f'{self.booking_acts_url}/{id}', headers=header, json=body)
             updated.raise_for_status()
             return updated
         except requests.exceptions.HTTPError as h:
@@ -115,15 +119,14 @@ class ApiActions:
             logger.warning(f'Request error occured: {r}')
             return None
 
-    def part_update_booking(self, token, id, body):
-        url = f'{self.url}booking/{id}'
-        header = {
-            'Accept': 'application/json',
-            'Cookie': f'token={token}'
-            }
+    def part_update_booking(self, id, body):
+        header = self.auth_and_get_token()
         part_updated = None
         try:
-            part_updated = requests.patch(url=url, headers=header, json=body)
+            part_updated = requests.patch(
+                url=f'{self.booking_acts_url}/{id}',
+                headers=header,
+                json=body)
             part_updated.raise_for_status()
             return part_updated
         except requests.exceptions.HTTPError as h:
@@ -133,13 +136,9 @@ class ApiActions:
             logger.warning(f'Request error occured: {r}')
             return None
 
-    def delete_booking(self, token, id):
-        url = f'{self.url}booking/{id}'
-        header = {
-            'Accept': 'application/json',
-            'Cookie': f'token={token}'
-            }
-        return requests.delete(url=url, headers=header)
+    def delete_booking(self, id):
+        header = self.auth_and_get_token()
+        return requests.delete(url=f'{self.booking_acts_url}/{id}', headers=header)
 
     def is_response_schema_correct(self, response, exp_schema):
         if not response:
