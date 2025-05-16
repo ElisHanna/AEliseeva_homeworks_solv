@@ -2,10 +2,15 @@
 
 
 Project sructure:
+
 -flask-app
+
  --templates
+ 
    --index.html
+   
  --app.py
+ 
  --Dockerfile
 
 1. Download and install Docker Desktop
