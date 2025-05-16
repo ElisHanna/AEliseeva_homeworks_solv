@@ -7,7 +7,7 @@ Project sructure:
 
  --templates
  
-   --index.html
+   ---index.html
    
  --app.py
  
