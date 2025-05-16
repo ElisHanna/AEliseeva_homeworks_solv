@@ -1,26 +1,25 @@
-####How to build and run the application randon-cat-app on flask
+### Random cat application
 
+#### Description:
+This little application on Flask language shows a random cat meme.
 
-Project sructure:
+#### Instruction how to run:
 
--flask-app
+1. Pull the repository
 
- --templates
- 
-   ---index.html
-   
- --app.py
- 
- --Dockerfile
+2. Download and install Docker Desktop, if you haven't yet
 
-1. Download and install Docker Desktop
+3. Authorize
 
-2. Build the image with command:
-    docker build -t random-cat-app .
+4. Run the docker engine with the command:
+  docker run engine
 
-3. Run the container with command:
-   docker run -p 8866:5001 --name random-cat-app random-cat-app
+5. Redirect to the root of repository, using the console. Enter and run this command to build the image:
+    *docker build -t random-cat-app .*
 
-4. Open the browser
+6. Enter ang run next command to run the container:
+   *docker run -p 8866:5001 --name random-cat-app random-cat-app*
 
-5. Redirect to adress: http://localhost:8866/
+7. Open the browser
+
+8. Redirect to adress: http://localhost:8866/
