@@ -2,7 +2,7 @@
 
 
 Project sructure:
-- flask-app
+-flask-app
  --templates
    --index.html
  --app.py
