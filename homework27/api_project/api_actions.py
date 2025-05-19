@@ -2,7 +2,7 @@ import logging
 import requests
 from loguru import logger
 from jsonschema import validate, ValidationError
-from env import Env
+from api_project.env import Env
 
 
 class ApiActions:
