@@ -7,4 +7,4 @@ COPY api_actions.py /usr/src/app/
 COPY pytest.ini /usr/src/app/
 COPY __init__.py /usr/src/app/
 COPY test_apidoc.py /usr/src/app/
-CMD ["pytest", "/usr/src/app/test_apidoc.py"]
+CMD ["pytest", "-v /usr/src/app/"]
