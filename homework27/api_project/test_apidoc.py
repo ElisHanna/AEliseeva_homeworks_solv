@@ -1,7 +1,7 @@
 import logging
 import pytest
 import requests
-from api_actions import ApiActions
+from api_project.api_actions import ApiActions
 from api_project.test_data import TestData as TD
 
 

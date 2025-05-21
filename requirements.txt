@@ -9,3 +9,4 @@ requests
 types-requests
 urllib3
 types-PyYAML
+allure-pytest
